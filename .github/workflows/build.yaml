@@ -18,19 +18,19 @@ jobs:
           script: |
             console.log(process.cwd())
 
-  build2:
-    runs-on: ubuntu-latest
-    defaults:
-      run:
-        working-directory: tools
-    matrix:
-      node-version: [18.x]
-    steps:
-      - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v3
-        with:
-          node-version: ${{ matrix.node-version }}
-      - name: Install dependencies
-        run: npm ci
-      - name: run script
-        run: npm start
+  # build2:
+  #   runs-on: ubuntu-latest
+  #   defaults:
+  #     run:
+  #       working-directory: tools
+  #   matrix:
+  #     node-version: [18.x]
+  #   steps:
+  #     - name: Use Node.js ${{ matrix.node-version }}
+  #       uses: actions/setup-node@v3
+  #       with:
+  #         node-version: ${{ matrix.node-version }}
+  #     - name: Install dependencies
+  #       run: npm ci
+  #     - name: run script
+  #       run: npm start
