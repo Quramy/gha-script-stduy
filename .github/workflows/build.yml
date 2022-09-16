@@ -18,6 +18,14 @@ jobs:
           script: |
             console.log(process.cwd())
 
+      - name: gh script A
+        uses: actions/github-script@v6
+        with:
+          working-directory: ./tools
+          script: |
+            console.log(process.cwd())
+
+
   # build2:
   #   runs-on: ubuntu-latest
   #   defaults:
