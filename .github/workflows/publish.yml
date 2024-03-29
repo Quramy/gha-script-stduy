@@ -13,8 +13,9 @@ jobs:
 
       - uses: actions/github-script@v7
         id: dist-tag
-        script: |
-          return context.github.ref_name.test/-/ ? "next" : "latest"
+        with:
+          script: |
+            return context.github.ref_name.test/-/ ? "next" : "latest"
 
       - name: script
         run: |
