@@ -6,7 +6,7 @@ on:
       - v*
 
 jobs:
-  build:
+  publish:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
@@ -14,9 +14,10 @@ jobs:
       - uses: actions/github-script@v7
         id: dist-tag
         with:
+          result-encoding: string
           script: |
             console.log(context.ref)
-            return /^\d+\.\d+\.\d+-/.test(context.ref) ? "next" : "latest"
+            return /^refs\/tags\/\d+\.\d+\.\d+-/.test(context.ref) ? "next" : "latest"
 
       - name: script
         run: |
