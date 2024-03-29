@@ -23,4 +23,4 @@ jobs:
         run: |
           echo ref: ${{ github.ref }}
           echo ref_name: ${{ github.ref_name }}
-          echo dist: ${{ steps.dist-tags.outputs.result }}
+          echo dist: ${{ steps.dist-tag.outputs.result }}
