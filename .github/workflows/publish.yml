@@ -17,7 +17,7 @@ jobs:
           result-encoding: string
           script: |
             console.log(context.ref)
-            return /^refs\/tags\/\d+\.\d+\.\d+-/.test(context.ref) ? "next" : "latest"
+            return /^refs\/tags\/v\d+\.\d+\.\d+$/.test(context.ref) ? "latest" : "next"
 
       - name: script
         run: |
