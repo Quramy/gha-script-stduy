@@ -15,7 +15,7 @@ jobs:
         id: dist-tag
         with:
           script: |
-            return context.github.ref_name.test/-/ ? "next" : "latest"
+            return /^\d+\.\d+\.\d+-/.test(context.github.ref_name) ? "next" : "latest"
 
       - name: script
         run: |
